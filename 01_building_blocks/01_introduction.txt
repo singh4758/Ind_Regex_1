@@ -1,0 +1,49 @@
+1. What is Regex?
+Ans:-  “A regular expression, regex or regexp is a sequence of characters that define a search pattern”.
+Regular expressions are a way to search for patterns within data sets.
+
+2. Is that regular expressions are NOT a programming language in itself?
+Ans:- Regular expressions are a feature that is supported by almost all programming languages.
+But by itself, it is not a programming language.
+
+------------------------------------------------------------------------------------------
+
+Example1:-
+
+foo|aaaa|bar
+foo| aa |bar
+foo|    | bar
+
+a* ===> zero or more characters of 'a'(The character just precedencr the asterisk).
+
+so the regex for this like be ====> foo a* bar   | there is no space it is only for clear visibility.
+
+-------------------------------------------------------------------------------------------
+
+For writing regular expression there is few step we have to clear about that
+
+Step1:-  The very first step would be to understand the requirement or the problem statement.
+From the input text that is provided to us, what is it that needs to be included?
+And what needs to be excluded?
+
+Step2:- Once we are clear on this, we will move ahead to Step#2. Here we identify patterns
+in the inclusion list or exclusion list. In the first example we found a pattern in the
+inclusion list.But we should also look out for patterns in the exclusion list.
+Sometimes it might just be easier to come up with a regex for the exclusion list, and
+then negate that regex.
+
+Step3:- Lets move ahead to Step#3. Here we use regex symbols to come up with a regex
+pattern string that represents the inclusion list. We saw one such pattern a* in our first
+example. We will be seeing many more such patterns in the examples to come.
+
+Step4:- Once we have our regex pattern ready, we are going to move to our next step,
+which is the 4th and final step. Here we use any regex engine from any programming
+language to try out our regex pattern. All you need to do is to make sure you have the
+input text file ready for consumption by the program.
+
+---------------------------------------------------------------------------------------------
+
+In ubuntu terminal using grep command
+
+grep 'regex with single quote' filename 
+grep 'fooa*bar' input.txt
