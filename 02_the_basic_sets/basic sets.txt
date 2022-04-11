@@ -1,0 +1,211 @@
+*  ===> Asterisk Symbol
+
+fooa*bar ===> zero or more characters of 'a'(The character just precedencr the asterisk).
+between foo and bar
+
+
+Example1:-
+
+foo|aaaa|bar
+foo| aa |bar
+foo|    | bar
+
+----------------------------------------------------------------------------------------------------
+
+.  ===> Wildcard Symbol
+
+foo.bar  ===> the .(period) between foo and bar means there must one character between foo and bar..
+
+Example2:-
+
+foo|s|bar
+foo|x|bar
+foo|a|bar
+
+---------------------------------------------------------------------------------------------------
+
+.*  ===> Wildcard Asterisk Combo
+
+zero or more occurances of wildcard, which means zero or more occurances of any character
+
+foo.*bar  ===> the .* means between foo and bar there may be zero or more occurances of any
+character
+
+Example3:-
+foo|     |bar
+foo|axcsd|bar
+foo| xcs |bar
+foo|  c  |bar
+
+
+--------------------------------------------------------------------------------------------------
+
+\s   ====>  whitespace
+
+\s represent whitespace. \s* represents zero or more occurances of whitespace.
+
+foo\s*bar ===> the \s* means between foo and bar there is zero or more occurances of whitespace.
+
+Example4:-
+
+foo| '     '  |bar  ===> 5 whitespace
+foo|  '   '   |bar  ===> 3 whitespace
+foo|   ''     |bar  ===> 0 whitespace
+
+--------------------------------------------------------------------------------------------------
+
+^   ===> caret symbol
+
+caret symbol stand for negation only witin the character of class(square brackets).
+
+-------------------------------------------------------------------------------------------------
+
+[] ===>  character class
+
+[] represent character of class. only one character which can be
+any of the ones inside square bracket.
+
+
+Example5:-
+[fcl]oo ===> it means any one of the character from f or c or l. and end with
+
+foo
+coo
+loo
+
+Example6:-
+
+[^mh]oo ===> It means any character except any of the ones inside square bracket in
+a single position.
+
+foo
+poo
+boo
+coo
+doo
+
+Example7:-
+
+[k-m]oo  ===> One of the character falling in the range given in square brackets.-k,l,m
+
+koo
+loo
+moo
+
+Example8:- 
+
+[k-mz]oo  ===>  One of the character falling in range or any of the choices given in square
+brackets.
+
+koo
+loo
+moo
+zoo
+
+Example9:- 
+
+[j-mJ-Mz]oo   ===>  One of the character falling in one of the range or any of the choices
+given in square brackets.
+
+joo
+koo
+loo
+moo
+Joo
+Koo
+Loo
+Moo
+zoo
+
+
+
+---------------------------------------------------------------------------------------------------
+
+\  ===> backslash
+
+^$*.[()\  Following characters should be escaped with \(backslash) as these character
+have special meaning otherwise.
+
+Exxample1:-
+
+x*\.y* represent the below Example
+
+x|.|y
+xx|.|yyy
+XXX|.|yy
+
+Example2:-
+
+x[#.:]y   ===> here we don't use escap symbol because in class of character the symbol has
+no special meaning. So it not need to escap.
+Below is the Example of that
+
+x.y
+x:y
+x#y
+
+Example3:-
+
+If any of the following character ^ -  appear inside square bracket. It need to be escaped with
+backslash . As these two character have special meaning inside square bracket
+
+
+x[#:\^]y
+
+Below is the example of above expression
+
+x:y
+x#y
+x^y
+
+Example4:-
+
+The backslash itself should always be escaped with backslash. Irrespective of its
+position within regex.
+
+x[#\\\^]y
+
+Below is the example of above expression
+
+x#y
+x\y
+x^y
+
+------------------------------------------------------------------------------------------------
+
+^ ===> caret symbol
+
+^ is placeholder that signifies beginning of line. The intepretation of ^ caret is differ whithin
+square bracket and outside of it. Inside square bracket it stand for negation. Outside, it is
+placeholder for beginning of line.
+
+^foo.*
+
+Below is the example of above expression
+
+foo bar baz
+foo baz bar
+
+
+--------------------------------------------------------------------------------------------------
+
+$ ===> anchor symbol
+
+$ is placeholder which signifies the end of line.
+
+.*bar$
+
+Example for above format
+
+baz foo bar
+foo baz bar
+
+Example
+
+^foo$
+
+represent start with foo and end with foo
+
+
+--------------------------------------------------------------------------------------------------
+
