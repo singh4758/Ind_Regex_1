@@ -1,0 +1,62 @@
+a{m}  ===> represent exactly 'm' repetition of whatever immediately preceds with, i.e 'a'.
+
+^[0-9][0-9][0-9]$  ===> ^[0-9]{3}$
+
+839
+514
+645
+
+----------------------------------------------------------------------------------------
+a{m, n} ===>   represent at least 'm' and at most 'n' repetition of whatever
+immediately preceds with, i.e 'a'.
+
+^[a-z]{4, 6}$
+
+lion
+tiger
+mouse
+cuckoo
+deer
+
+----------------------------------------------------------------------------------------
+
+() ===> Paranthesis is used to group and treat as a single entity
+
+(ha){4, }  it represent at least 4 times repetition of 'ha'
+
+Example:- 
+
+hahahaha
+hahahahahaha
+hahahahahahahaha
+
+^(ha){, 2} it represent at most 2 times repetition of 'ha'
+
+
+-------------------------------------------------------------------------------------------
+
+a+ ===> One or more occurances of 'a'(The character just preceding the plus symbol)
+
+
+fooa+bar
+
+fooabar
+fooaaaaabar
+fooaaaaaaaaaaaaabar
+
+--------------------------------------------------------------------------------------------
+
+a? ===> zero or one occurances of 'a'(The character just preceding the question mark)
+
+https?://website
+
+http://website
+https://website
+
+---------------------------------------------------------------------------------------------
+
+(a|b)  ===> represent either a or b where a and can be multi-character string.
+
+(log|ply)wood
+
+
